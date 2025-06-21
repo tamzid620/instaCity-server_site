@@ -9,7 +9,10 @@ const DB_PASSWORD = process.env.DB_PASSWORD ;
 const DB_NAME = process.env.DB_NAME ;
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.qtemx5j.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+
+// const uri = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.qtemx5j.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://LoyalMeal:${DB_PASSWORD}@cluster0.qe0e7ik.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0` ;
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -33,7 +36,7 @@ run().catch(console.dir);
 
 //  Basic System Run Portal --------------------------------------------------------
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Loyality system connected !')
 })
 
 app.listen(port, () => {
